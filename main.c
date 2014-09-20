@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <time.h> // Allows computer to generate radom using time.
 
 int game(int max, int min)
 {
             printf("values between : %d and %d\n\n", min, max);
     int mysteryNumber = 0, triedNumber = 0;
     int tries = 0;
-    //int playAgain = 1;
-
 
     /*
     Creating random number
@@ -44,8 +42,7 @@ int game(int max, int min)
             printf("That's less !\n\n");
         else if (mysteryNumber == triedNumber)
             {
-            printf ("Well done, you found the Mystery Number ");
-            printf("in %d tries !!!\n\n", tries);
+            printf ("Well done, you found the Mystery Number in %d trie(s) !!!\n\n", tries);
             //printf("Wanna play Again? (1: yes; 0:no)");
             //scanf("%d", &playAgain);
             }
@@ -82,7 +79,7 @@ while (playAgain !=0)
 
     /*Menu*/
         int menu = 0;
-printf("===menu===\n1.Easy: 1~100\n2.Medium: 1~1000\n3.Hard: 1~10000\n4.Custom: x~y\n");
+printf("===menu===\n\n1.Easy: 1~100\n2.Medium: 1~1000\n3.Hard: 1~10,000\n4.HARDCORE: 1~1,000,000\n5.Custom: x~y\n\n\n");
 scanf("%d", &menu);
 switch (menu)
 {
@@ -102,22 +99,48 @@ switch (menu)
         max = 10000, min = 1;
         game(max, min);
         break;
- /*   case 4:
-        printf("Custom\n");
-        //max = 100, min = 1;
-        printf("set min:")
-        scanf("%d", &min)
-        printf("set max:")
-        scanf("%d", &max)
+    case 4:
+        printf("HARDCORE\n");
+        max = 1000000, min = 1;
         game(max, min);
         break;
+    case 5:
+        printf("Custom\n");
+        /*
+        The following allows player to set mini and max values for radom number
+        La suite permet au joueur de choisir les valeurs minimales et maximales du nombrealéatoire
         */
+        printf("set min:");
+        scanf("%d", &min);
+        printf("set max:");
+        scanf("%d", &max);
+        game(max, min);
+        break;
+
     default:
-        printf("try again\n");
+        printf("error : try again\n");
 }
             printf("Wanna play Again? (1: yes; 0:no)");
             scanf("%d", &playAgain);
-            }
-printf("bye !!");
+           /*
+           temporary test :
+
+           if(scanf("%d", &playAgain) == 1)
+                {
+                    printf("%d", playAgain);
+                }
+            else if (scanf("%d", &playAgain) == 0)
+                {
+                    printf("%d", playAgain);
+                }
+            else
+                {
+                printf("failed to read integer.\n");
+                playAgain=0;
+                }
+                */
+}
+printf("Good bye !!\n\n");
    return 0;
 }
+
