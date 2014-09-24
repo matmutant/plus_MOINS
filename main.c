@@ -73,7 +73,7 @@ int main ( int argc, char** argv )
     {
 
         /*Menu*/
-        int menu = 0;
+        int menu = 0, error = 0;
         printf("===menu===\n\n1.Easy: 1~100\n2.Medium: 1~1000\n3.Hard: 1~10,000\n4.HARDCORE: 1~1,000,000\n5.Custom: x~y\n\n\n");
         scanf("%d", &menu);
         switch (menu)
@@ -82,22 +82,18 @@ int main ( int argc, char** argv )
             case 1:
                 printf("Easy\n");
                 max = 100, min = 1;
-                game(max, min);
                 break;
             case 2:
                 printf("Medium\n");
                 max = 1000, min = 1;
-                game(max, min);
                 break;
             case 3:
                 printf("Hard\n");
                 max = 10000, min = 1;
-                game(max, min);
                 break;
             case 4:
                 printf("HARDCORE\n");
                 max = 1000000, min = 1;
-                game(max, min);
                 break;
             case 5:
                 printf("Custom\n");
@@ -109,12 +105,15 @@ int main ( int argc, char** argv )
                 scanf("%d", &min);
                 printf("set max:");
                 scanf("%d", &max);
-                game(max, min);
                 break;
 
             default:
+                error = 1;
                 printf("error : try again\n");
         }
+        if (error != 1)
+            game(max, min);
+            
         printf("Wanna play Again? (1: yes; 0:no)");
         scanf("%d", &playAgain);
         /*
