@@ -41,11 +41,7 @@ int game(int max, int min)
         else if (mysteryNumber < triedNumber)
             printf("That's less !\n\n");
         else
-        {
             printf ("Well done, you found the Mystery Number in %d trie(s) !!!\n\n", tries);
-            //printf("Wanna play Again? (1: yes; 0:no)");
-            //scanf("%d", &playAgain);
-        }
 
     } while (triedNumber != mysteryNumber);
     return 0;
