@@ -40,16 +40,11 @@ int game(int max, int min)
             printf("That's MORE !\n\n");
         else if (mysteryNumber < triedNumber)
             printf("That's less !\n\n");
-        else if (mysteryNumber == triedNumber)
+        else
         {
             printf ("Well done, you found the Mystery Number in %d trie(s) !!!\n\n", tries);
             //printf("Wanna play Again? (1: yes; 0:no)");
             //scanf("%d", &playAgain);
-        }
-        else
-        {
-            printf("unexpected entry");
-            return 666;
         }
 
     } while (triedNumber != mysteryNumber);
